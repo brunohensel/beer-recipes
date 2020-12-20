@@ -1,6 +1,6 @@
 package com.example.beerrecipes.di
 
-import com.example.beerrecipes.BeerRecipeApi
+import com.example.beerrecipes.data.source.remote.BeerApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -51,8 +51,8 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideBeerRecipesApi(retrofit: Retrofit): BeerRecipeApi {
-        return retrofit.create(BeerRecipeApi::class.java)
+    fun provideBeerRecipesApi(retrofit: Retrofit): BeerApi {
+        return retrofit.create(BeerApi::class.java)
     }
 
     private const val BASE_URL = "https://api.punkapi.com/v2/"
